@@ -43,7 +43,7 @@ const UpsellPage = () => {
             </div>
             <div className="bg-white p-6 text-center text-gray-700">
               <p>
-                Nós acreditamos tanto no nosso Protocolo que oferecemos <span className="font-bold">7 DIAS DE GARANTIA INCONDICIONAL</span>.
+                Nós acreditamos tanto no nosso Protocolo que oferecemos <span className="font-bold text-[#4CAF50]">7 DIAS DE GARANTIA INCONDICIONAL</span>.
               </p>
             </div>
           </div>
