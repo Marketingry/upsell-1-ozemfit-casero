@@ -1,19 +1,56 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { AlertTriangle, Shield } from 'lucide-react';
+import VturbPlayer from '@/components/VturbPlayer';
 
-import { MadeWithDyad } from "@/components/made-with-dyad";
-
-const Index = () => {
+const UpsellPage = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">
-          Start building your amazing project here!
-        </p>
-      </div>
-      <MadeWithDyad />
+    <div className="bg-[#FAFAFA] min-h-screen font-sans flex justify-center">
+      <main className="w-full max-w-[500px] mx-auto">
+        {/* 1. BARRA DE ALERTA (TOPO) */}
+        <div className="bg-[#D32F2F] text-white font-bold uppercase text-sm text-center py-2 flex items-center justify-center gap-2">
+          <AlertTriangle className="w-5 h-5 text-yellow-400" />
+          <span>AVISO IMPORTANTE</span>
+        </div>
+
+        <div className="p-4">
+          {/* 2. BOX DA HEADLINE */}
+          <div className="bg-white border-2 border-[#FF9800] rounded-lg shadow-lg shadow-orange-200/50 p-6 text-center">
+            <h1 className="text-2xl font-extrabold text-[#333333]">
+              ASSISTA O VÍDEO OU VOCÊ PODE NÃO TER RESULTADOS
+            </h1>
+            <p className="text-[#EF6C00] mt-2">
+              No final você receberá um Presente Exclusivo
+            </p>
+          </div>
+
+          {/* 3. VÍDEO DE VENDAS */}
+          <div className="mt-6">
+            <VturbPlayer />
+          </div>
+
+          {/* 4. BOTÃO DE CTA (Placeholder) */}
+          <div className="mt-[25px]">
+            {/* INSERIR SCRIPT DO BOTÃO AQUI */}
+            <button className="w-full bg-gradient-to-b from-[#00E676] to-green-700 text-white font-bold py-4 px-6 rounded-full text-lg uppercase shadow-md hover:shadow-lg transition-shadow duration-300 animate-pulse">
+              QUERO APROVEITAR A OFERTA!
+            </button>
+          </div>
+
+          {/* 5. SEÇÃO DE GARANTIA */}
+          <div className="mt-8 rounded-lg overflow-hidden shadow-md">
+            <div className="bg-[#4CAF50] text-white font-bold p-3 flex items-center justify-center gap-2">
+              <Shield className="w-5 h-5" />
+              <span>GARANTIA INCONDICIONAL</span>
+            </div>
+            <div className="bg-white p-6 text-center text-gray-700">
+              <p>
+                Nós acreditamos tanto no nosso Protocolo que oferecemos <span className="font-bold">7 DIAS DE GARANTIA INCONDICIONAL</span>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </main>
     </div>
   );
 };
 
-export default Index;
+export default UpsellPage;
