@@ -1,5 +1,6 @@
 import { AlertTriangle, Shield } from 'lucide-react';
 import VturbPlayer from '@/components/VturbPlayer';
+import HotmartUpsellButton from '@/components/HotmartUpsellButton';
 
 const UpsellPage = () => {
   return (
@@ -27,12 +28,9 @@ const UpsellPage = () => {
             <VturbPlayer />
           </div>
 
-          {/* 4. BOTÃO DE CTA (Placeholder) */}
+          {/* 4. BOTÃO DE CTA */}
           <div className="mt-[25px]">
-            {/* INSERIR SCRIPT DO BOTÃO AQUI */}
-            <button className="w-full bg-gradient-to-b from-[#00E676] to-green-700 text-white font-bold py-4 px-6 rounded-full text-lg uppercase shadow-md hover:shadow-lg transition-shadow duration-300 animate-pulse">
-              QUERO APROVEITAR A OFERTA!
-            </button>
+            <HotmartUpsellButton />
           </div>
 
           {/* 5. SEÇÃO DE GARANTIA */}
