@@ -7,12 +7,16 @@ const VturbPlayer: React.FC = () => {
     const scriptId = 'vturb-script';
     // Evita adicionar o script múltiplas vezes
     if (document.getElementById(scriptId)) {
-      return;
+      // Se o script já existe, removemos para adicionar o novo
+      const oldScript = document.getElementById(scriptId);
+      if (oldScript) {
+        document.head.removeChild(oldScript);
+      }
     }
 
     const script = document.createElement('script');
     script.id = scriptId;
-    script.src = "https://scripts.converteai.net/2899e891-d272-4691-9f42-3b457355798a/players/691f2bff813dc92a81d454e4/v4/player.js";
+    script.src = "https://scripts.converteai.net/847b6926-da65-426c-8bfe-3803276ed584/players/692eb9cee659a90b1da210de/v4/player.js";
     script.async = true;
     document.head.appendChild(script);
 
@@ -20,14 +24,19 @@ const VturbPlayer: React.FC = () => {
       // Limpa o script quando o componente é desmontado
       const existingScript = document.getElementById(scriptId);
       if (existingScript) {
-        document.head.removeChild(existingScript);
+        // A verificação aqui é importante para evitar erros se o script for removido por outros meios
+        try {
+          document.head.removeChild(existingScript);
+        } catch (e) {
+          console.warn("Falha ao remover o script do Vturb.", e);
+        }
       }
     };
   }, []);
 
   return (
     <div style={{ position: 'relative', width: '100%' }}>
-      <vturb-smartplayer id="vid-691f2bff813dc92a81d454e4" style={{ display: 'block', margin: '0 auto', width: '100%' }}></vturb-smartplayer>
+      <vturb-smartplayer id="vid-692eb9cee659a90b1da210de" style={{ display: 'block', margin: '0 auto', width: '100%' }}></vturb-smartplayer>
     </div>
   );
 };
